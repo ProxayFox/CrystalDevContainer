@@ -1,45 +1,105 @@
-# playground
+# Crystal Lang Template
 
-TODO: Write a description here
+This repository is a starter template for building Crystal console applications with a ready-to-use devcontainer, Shards configuration, and a minimal project layout.
 
-## Installation
+Use it when you want to start a new Crystal project without rebuilding the container setup, compiler installation, editor extensions, and basic file structure from scratch.
 
-TODO: Write installation instructions here
+## What This Template Includes
 
-## Usage
+- Crystal 1.19.1 in a VS Code devcontainer
+- Shards configured with a starter target in [shard.yml](shard.yml)
+- Crystal source layout under [src/](src)
+- Spec setup under [spec/](spec)
+- Build output kept in [bin/](bin) through `shards build`
+- Workspace instructions for AI-assisted editing in [.github/copilot-instructions.md](.github/copilot-instructions.md)
 
-Run the program directly during development:
+## Create a New Repository From This Template
+
+1. On GitHub, click `Use this template` on the template repository.
+2. Create your new repository from it.
+3. Clone your new repository locally.
+4. Rename the shard, target, module, and metadata placeholders to match your project.
+
+Example:
+
+```sh
+git clone https://github.com/your-user/your-new-repo.git
+cd your-new-repo
+```
+
+## Set Up The Project
+
+You can work in either the devcontainer or a local Crystal installation.
+
+### Option 1: VS Code Devcontainer
+
+1. Open the repository in VS Code.
+2. Reopen it in the devcontainer when prompted.
+3. Wait for the container to finish building.
+4. The container runs `shards install` automatically after creation.
+
+The devcontainer also mounts your host SSH directory into the container so Git operations can use your existing SSH keys.
+
+### Option 2: Local Crystal Setup
+
+Install Crystal 1.19.1 or newer, then run:
+
+```sh
+shards install
+```
+
+## Common Commands
+
+Run the app through the target defined in [shard.yml](shard.yml):
 
 ```sh
 shards run playground
 ```
 
-Build the binary with Shards so artifacts stay out of the repository root:
+Run the entrypoint directly with Crystal:
+
+```sh
+crystal run src/playground.cr
+```
+
+Build the binary into [bin/](bin):
 
 ```sh
 shards build
 ./bin/playground
 ```
 
-## Development
-
-Common commands:
+Run the test suite:
 
 ```sh
-shards install
-shards build
-shards run playground
 crystal spec
 ```
 
-## Contributing
+## Customize The Template After Creating A Repo
 
-1. Fork it (<https://github.com/your-github-user/playGround/fork>)
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
+Before using the generated repository for real work, update these placeholders:
 
-## Contributors
+- Project name and target in [shard.yml](shard.yml)
+- Author metadata in [shard.yml](shard.yml)
+- Module name and documentation in [src/playground.cr](src/playground.cr)
+- Starter spec in [spec/playground_spec.cr](spec/playground_spec.cr)
+- Repository-specific text in this README
 
-- [your-name-here](https://github.com/your-github-user) - creator and maintainer
+## Project Structure
+
+```text
+.
+├── .devcontainer/        # Devcontainer configuration
+├── .github/              # Workspace-specific Copilot instructions
+├── spec/                 # Test files
+├── src/                  # Application source
+├── bin/                  # Build output from shards build
+├── shard.yml             # Shards manifest
+└── README.md
+```
+
+## Notes
+
+- `shards run playground` is correct. `shard run playground` is not.
+- `crystal run` expects a source file path, so use `crystal run src/playground.cr`.
+- `crystal spec` still reflects the starter template until you replace the placeholder assertion in [spec/playground_spec.cr](spec/playground_spec.cr).
