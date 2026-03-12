@@ -102,4 +102,4 @@ Before using the generated repository for real work, update these placeholders:
 
 - `shards run playground` is correct. `shard run playground` is not.
 - `crystal run` expects a source file path, so use `crystal run src/playground.cr`.
-- `crystal spec` still reflects the starter template until you replace the placeholder assertion in [spec/playground_spec.cr](spec/playground_spec.cr).
+- `crystal spec` passes in the starter template and gives you a clean baseline before you add your own tests.
