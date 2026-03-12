@@ -33,4 +33,4 @@
 - Run the app with `shards run playground` or `crystal run src/playground.cr`
 - Build the app with `shards build`; this writes the binary to `bin/playground` based on the target declared in `shard.yml`
 - Run tests with `crystal spec`
-- `crystal spec` currently fails because `spec/playground_spec.cr` still contains the starter failing assertion; replace the placeholder test as part of feature work that needs a green test suite
+- Keep the starter test suite passing; extend `spec/playground_spec.cr` or replace it with real tests as the template is customized
