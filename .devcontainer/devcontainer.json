@@ -1,0 +1,20 @@
+{
+  "name": "Crystal Dev Container",
+  "build": {
+    "dockerfile": "dockerfile",
+    "args": {
+      "crystal_version": "1.19.1",
+      "crystal_release": "1"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "crystal-lang-tools.crystal-lang",
+        "veelenga.crystal-ameba"
+      ]
+    }
+  },
+  "postCreateCommand": "shards install",
+  "remoteUser": "vscode"
+}
