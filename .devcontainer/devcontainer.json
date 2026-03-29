@@ -13,14 +13,21 @@
     "source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,type=bind,consistency=cached"
   ],
 
+  "postCreateCommand": "shards install",
+  "remoteUser": "vscode",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {}
+  },
+
   "customizations": {
     "vscode": {
       "extensions": [
         "crystal-lang-tools.crystal-lang",
-        "veelenga.crystal-ameba"
+        "veelenga.crystal-ameba",
+        "Crystality.crystality",
+        "vadimcn.vscode-lldb",
+        "ms-vscode.cpptools-extension-pack"
       ]
     }
-  },
-  "postCreateCommand": "shards install",
-  "remoteUser": "vscode"
+  }
 }
